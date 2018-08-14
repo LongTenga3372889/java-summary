@@ -8,3 +8,4 @@
 3.程序计数器是以上五个模块唯一一个不会出现OutOfMemory的模块。也就是说其余四个模块都有可能出现OutOfMemory。
 
 # 虚拟机栈
+[虚拟机栈内存溢出](../jvm/src/VirtualMemory.java)
