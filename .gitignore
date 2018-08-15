@@ -1,23 +1,6 @@
-# Eclipse
-.classpath
-.project
-.settings/
-
 # Intellij
 .idea/
 *.iml
 *.iws
 **/out
 **/overlays/
-
-# Mac
-.DS_Store
-
-# Maven
-**/log/
-**/target
-**/*.log
-**/tmp
-**/.tmp
-**/bin/**
-/csParent/core/META-INF/context.xml
