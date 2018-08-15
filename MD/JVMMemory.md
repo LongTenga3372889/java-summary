@@ -14,6 +14,6 @@
 
 3.java虚拟机栈规范中，对这个区域规定了两种异常情况:
   
->a)如果线程请求的栈深度大于虚拟机所允许的深度，将抛出StackOverflowError如（[虚拟机栈内存溢出](../jvm/src/VirtualMemory.java)）
+>a)如果线程请求的栈深度大于虚拟机所允许的深度，将抛出StackOverflowError异常（[虚拟机栈内存溢出示例](../jvm/src/VirtualMemory.java)）
    
->b)
+>b)如果虚拟机可以动态扩展，但是扩展时无法申请到足够的内存，就会抛出OutOfMemoryError异常()

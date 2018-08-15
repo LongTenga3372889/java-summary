@@ -6,24 +6,26 @@
  */
 public class VirtualMemory {
 
-    private static int count = 0;
-
-    public static void main(String[] args) {
-        VirtualMemory virtualMemory = new VirtualMemory();
-        virtualMemory.test();
+    private void dontStop() {
+        while (true) {}
     }
 
-    /**
-     * 虚拟机栈内存溢出
-     */
-    public void test(){
-        try {//11854
-            count++;
-            test();
-        }catch (Throwable e){
-            System.out.println("递归次数："+count);
-            e.printStackTrace();
+    public void stackLeakByThread() {
+        //无限制创建死循环线程
+        while (true) {
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    dontStop();
+                }
+            });
+            thread.start();
         }
+    }
+
+    public static void main(String[] args) throws Throwable{
+        VirtualMemory oom = new VirtualMemory();
+        oom.stackLeakByThread();
     }
 
 }
