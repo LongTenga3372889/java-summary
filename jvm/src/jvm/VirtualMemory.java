@@ -1,6 +1,8 @@
+package jvm;
+
 /**
  * @author teng.long@hand-china.com
- * @Name VirtualMemory
+ * @Name jvm.VirtualMemory
  * @Description
  * @Date 2018/8/14
  */

@@ -14,9 +14,9 @@
 
 3.java虚拟机栈规范中，对这个区域规定了两种异常情况:
   
->a)如果线程请求的栈深度大于虚拟机所允许的深度，将抛出StackOverflowError异常（[示例代码](../jvm/src/VirtualStack.java)）
+>a)如果线程请求的栈深度大于虚拟机所允许的深度，将抛出StackOverflowError异常（[示例代码](../jvm/src/jvm/VirtualStack.java)）
    
->b)如果虚拟机可以动态扩展，但是扩展时无法申请到足够的内存，就会抛出OutOfMemoryError异常([示例代码](../jvm/src/VirtualMemory.java))
+>b)如果虚拟机可以动态扩展，但是扩展时无法申请到足够的内存，就会抛出OutOfMemoryError异常([示例代码](../jvm/src/jvm/VirtualMemory.java))
 
 # 本地方法栈
 本地方法栈和虚拟机栈所发挥的作用基本一致唯一的区别就是虚拟机用到了Native方法服务时只会使用本地方法栈。
