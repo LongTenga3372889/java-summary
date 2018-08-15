@@ -18,7 +18,7 @@ public class VirtualMemory {
      */
     public void test(){
         try {
-            count++;
+            //count++;
             test();
         }catch (Throwable e){
             System.out.println("递归次数："+count);
