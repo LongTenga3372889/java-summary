@@ -21,3 +21,33 @@
 # 本地方法栈
 本地方法栈和虚拟机栈所发挥的作用基本一致唯一的区别就是虚拟机用到了Native方法服务时只会使用本地方法栈。
 与虚拟机栈一样都会出现StackOverflowError和OutOfMemoryError
+
+#堆
+1.堆是虚拟机中内存中最大的一块。他是被所有的线程共享的一块内存区域。
+
+2.堆在内存中的唯一目的就是存放对象实例，基本上所有的对象实例都是在堆中分配内存的。
+
+3.堆是垃圾收集器管理的主要区域。由于垃圾收集器大多数采用分代收集算法，所以堆可以分为新生代和老年代。
+
+```java
+        //堆内存溢出示例
+        public class HeapMemory{
+            public static void main(String[] args){
+                java.util.List list = new java.util.ArrayList();
+                while(true){
+                    list.add(new HeapStackOver());
+                }
+            }
+        }
+        //堆内存泄露示例
+        public class HeapStack{
+            public static void main(String[] args){
+                java.util.Vector vector = new java.util.Vector();
+                for (int i =1;i<100;i++) {
+                    Object o = new Object();
+                    vector.add(o);
+                    o=null;
+                }
+            }
+        }
+```
