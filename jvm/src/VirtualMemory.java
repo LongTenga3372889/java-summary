@@ -17,8 +17,8 @@ public class VirtualMemory {
      * 虚拟机栈内存溢出
      */
     public void test(){
-        try {
-            //count++;
+        try {//11854
+            count++;
             test();
         }catch (Throwable e){
             System.out.println("递归次数："+count);
