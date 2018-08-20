@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author teng.long@hand-china.com
  * @Name HeapOOM
- * @Description
+ * @Description : -Xms20M -Xmx20M -Xmn10M
  * @Date 2018/8/20
  */
 public class HeapOOM {
