@@ -14,6 +14,13 @@ public class VMStackError {
         stackLength++;
         stack();
     }
+
+    /**
+     * VM Xss:128K 深度：999
+     * Xss:256K    深度：2785
+     * @param args
+     * @throws Throwable
+     */
     public static void main(String[] args) throws Throwable{
         VMStackError j = new VMStackError();
         try{

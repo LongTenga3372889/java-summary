@@ -15,5 +15,5 @@
 
 ## 虚拟机栈溢出与本地方法栈溢出
 
-   - 如果线程请求的最大深度大于虚拟机锁允许的最大深度，将抛出StackOverflowError[示例代码](../../jvm/src/jvm/VMStackError.java)。
+   - 如果线程请求的最大深度大于虚拟机锁允许的最大深度，将抛出StackOverflowError。[示例代码](../../jvm/src/jvm/VMStackError.java)
    - 如果虚拟机在扩展时无法或得到足够的内存会抛出OutOfMemoryError。
