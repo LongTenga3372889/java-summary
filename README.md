@@ -11,3 +11,4 @@ Java 知识点，继续完善中。
 ## JVM
 - [JVM内存划分](MD/jvm/JVMMemory.md)
 - [OutOfMemoryError异常分析](MD/jvm/OutOfMemoryError.md)
+- [GC](MD/jvm/JVMGC.md)
