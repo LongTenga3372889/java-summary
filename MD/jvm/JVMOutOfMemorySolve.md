@@ -7,5 +7,7 @@
  ![](../../phone/k.png)
  
 - 执行sudo ./jmap -heap pid(java线程的pid可以根据top命令查询)可以看出老年代在90%以上。
+ ![](../../phone/l.png)
  
 - 再看看fullGC的频率
+ ![](../../phone/m.png)
