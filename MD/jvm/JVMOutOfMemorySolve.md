@@ -10,4 +10,5 @@
  ![](../../phone/l.png)
  
 - 再看看fullGC的频率
+
  ![](../../phone/m.png)
