@@ -9,6 +9,14 @@
 - 执行sudo ./jmap -heap pid(java线程的pid可以根据top命令查询)可以看出老年代在90%以上。
  ![](../../phone/l.png)
  
-- 再看看fullGC的频率(可以看出full GC的频率是相当高的)
+- 再看看fullGC的频率(可以看出full GC的频率是相当高的)这时我们基本可以判断是程序问题，或者存储的集合十分庞大没有分批处理导致。
 
  ![](../../phone/m.png)
+ 
+- 用eclipse的mat堆栈分析,可以看出有一个对象占了1.7GB。点击1.7G的扇形区域点击List Object —>with outgoing references。一层一层的找。
+
+ ![](../../phone/mat.png)
+
+- 最后发现有一个list的对象有近80万数据。可以猜测是没有进行分批处理。然后找出代码，并修改代码为分批处理。
+
+ ![](../../phone/mat2.png)
