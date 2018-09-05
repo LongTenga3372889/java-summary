@@ -14,11 +14,11 @@ public class ReferenceCountingGC {
     public void testGC(){
         ReferenceCountingGC objA=new ReferenceCountingGC();  // objACount+1
         ReferenceCountingGC objB=new ReferenceCountingGC();  // objBCount+1
-        objA.instance=objB; // objACount+2
-        objB.instance=objA; // objACount+2
+        objA.instance=objB; // objACount+1
+        objB.instance=objA; // objBCount+1
         //假设在这行发生GC,objA和objB是否能被回收？
-        objB=null;
-        objA=null;
+        objB=null; //objBCount-1=1
+        objA=null; //objACount-1=1
         System.gc();
     }
 
