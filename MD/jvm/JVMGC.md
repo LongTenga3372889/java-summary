@@ -11,7 +11,7 @@
 
 - 在执行full gc的时候就会把计数器为0的对象全部释放。
 
-- 此算法的缺点是不能解决循环引用的问题。![示例代码](../../jvm/src/jvm/calculate/ReferenceCountingGC.java)
+- 此算法的缺点是不能解决循环引用的问题。[示例代码](../../jvm/src/jvm/calculate/ReferenceCountingGC.java)
 
 运行结果如图  ![](../../phone/引用计算法.png)
 
