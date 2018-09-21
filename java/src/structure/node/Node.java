@@ -6,7 +6,7 @@ import java.io.*;
 
 /**
  * @author teng.long@hand-china.com
- * @Name Node
+ * @Name 单链表Node
  * @Description
  * @Date 2018/9/20
  */
