@@ -143,6 +143,14 @@ public class Node implements Serializable{
         return length;
     }
 
+    public String getData(){
+        return data;
+    }
+
+    public void setData(String date){
+        this.data = date;
+    }
+
     public static void main(String[] args) {
         Node node1 = new Node("a");
         Node node2 = new Node("c");

@@ -12,7 +12,7 @@ Java 知识点，继续完善中。
 
 ### 链表
 
-- [单链表](jvm/src/structure/node/Node.java)
+- [单链表](java/src/structure/node/Node.java)
 
 ## JVM
 - [JVM内存划分](MD/jvm/JVMMemory.md)
