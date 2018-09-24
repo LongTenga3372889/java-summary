@@ -1,6 +1,7 @@
 package structure.node;
 
 import error.exception.MyException;
+import util.MyObject;
 
 import java.io.*;
 
@@ -10,7 +11,7 @@ import java.io.*;
  * @Description
  * @Date 2018/9/20
  */
-public class Node implements Serializable{
+public class Node  extends MyObject implements Serializable {
 
     /**
      * 链表数据
@@ -50,38 +51,6 @@ public class Node implements Serializable{
         temp.next = node;
     }
 
-    @Override
-    public Node clone() {
-        ByteArrayOutputStream bo = new ByteArrayOutputStream();
-        ObjectOutputStream oo = null;
-        ByteArrayInputStream bi = null;
-        ObjectInputStream oi = null;
-        try {
-            oo = new ObjectOutputStream(bo);
-            oo.writeObject(this);
-            bi = new ByteArrayInputStream(bo.toByteArray());
-            oi = new ObjectInputStream(bi);
-            return (Node) oi.readObject();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                if(oi!=null) {
-                    oi.close();
-                }if(bi!=null) {
-                    bi.close();
-                }if(oo!=null) {
-                    oo.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        throw new MyException("clone出现异常！");
-    }
-
     /**
      * 在指定的位子插入链表
      *
@@ -94,7 +63,7 @@ public class Node implements Serializable{
         }
         Node temp = head;
         //为了不影响node链表
-        Node node1 = node.clone();
+        Node node1 = (Node) node.clone();
         while (temp.next != null) {
             if (index == temp.length()) {
                 node1.addNode(temp.next);
