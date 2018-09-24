@@ -48,6 +48,10 @@ public class DoubleNode extends MyObject implements Serializable {
         this.next = next;
     }
 
+    /**
+     * 结算当前节点的长度
+     * @return
+     */
     public int length(){
         DoubleNode doubleNode = (DoubleNode) this.clone();
         int length = 1;
@@ -65,12 +69,40 @@ public class DoubleNode extends MyObject implements Serializable {
     public void addDobleNode(DoubleNode temp){
         //避免导致节点temp发生变化
         DoubleNode header = this;
+        if(temp !=null) {
+            temp = (DoubleNode) temp.clone();
+            while (header.next != null) {
+                header = header.next;
+            }
+            header.next = temp;
+            temp.prev = header;
+        }else{
+            throw new MyException("克隆对象为null");
+        }
+    }
+
+    public void addIndexDobleNode(DoubleNode temp,int index){
+        DoubleNode header = this;
+        int count = header.length();
+        int length;
         temp = (DoubleNode) temp.clone();
-        while(header.next !=null){
+        if(index<1 || index>length()){
+            throw new MyException("链表越界异常");
+        }
+        while((length = header.length())!=0){
+            if(index == count - length){
+                /**
+                 * 防止抛出空指针异常
+                 */
+                if(header.next!=null) {
+                    temp.addDobleNode(header.next);
+                }
+                header.next = temp;
+                temp.prev = header;
+                return ;
+            }
             header = header.next;
         }
-        header.next = temp;
-        temp.prev = header;
     }
 
     public String getData(){
@@ -84,7 +116,9 @@ public class DoubleNode extends MyObject implements Serializable {
     public static void main(String[] args) {
         DoubleNode aNode = new DoubleNode("aa");
         DoubleNode bNode = new DoubleNode("bb");
+        bNode.addDobleNode(aNode);
         aNode.addDobleNode(bNode);
+        aNode.addIndexDobleNode(bNode, 1);
         System.out.println(aNode.length());
     }
 
