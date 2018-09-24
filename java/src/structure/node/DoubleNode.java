@@ -53,6 +53,7 @@ public class DoubleNode extends MyObject implements Serializable {
      * @return
      */
     public int length(){
+        //防止执行length()方法后对本身产生影响
         DoubleNode doubleNode = (DoubleNode) this.clone();
         int length = 1;
         while(doubleNode.next!=null){
@@ -64,12 +65,13 @@ public class DoubleNode extends MyObject implements Serializable {
 
     /**
      * 增加一个节点
-     * @param temp
+     * @param temp  双向链表
      */
     public void addDobleNode(DoubleNode temp){
         //避免导致节点temp发生变化
         DoubleNode header = this;
         if(temp !=null) {
+            //防止方法执行后对temp对象发生变化
             temp = (DoubleNode) temp.clone();
             while (header.next != null) {
                 header = header.next;
@@ -83,13 +85,14 @@ public class DoubleNode extends MyObject implements Serializable {
 
     /**
      * 在双向链表指定的位子插入另一个双向链表
-     * @param temp
-     * @param index
+     * @param temp    另一个双向链表
+     * @param index   要插入链表的位子
      */
     public void addIndexDobleNode(DoubleNode temp,int index){
         DoubleNode header = this;
         int count = header.length();
         int length;
+        //防止执行addIndexDobleNode()后对temp产生影响
         temp = (DoubleNode) temp.clone();
         if(index<1 || index>length()){
             throw new MyException("链表越界异常");

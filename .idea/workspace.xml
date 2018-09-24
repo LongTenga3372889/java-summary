@@ -16,16 +16,16 @@
       <file leaf-file-name="DoubleNode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/java/src/structure/node/DoubleNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+            <state relative-caret-position="366">
+              <caret line="94" column="43" lean-forward="false" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#583#584#0" expanded="true" />
                 <element signature="e#615#616#0" expanded="true" />
-                <element signature="e#2461#2462#0" expanded="true" />
-                <element signature="e#2488#2489#0" expanded="true" />
-                <element signature="e#2527#2528#0" expanded="true" />
-                <element signature="e#2559#2560#0" expanded="true" />
+                <element signature="e#2599#2600#0" expanded="true" />
+                <element signature="e#2626#2627#0" expanded="true" />
+                <element signature="e#2665#2666#0" expanded="true" />
+                <element signature="e#2697#2698#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -489,7 +489,7 @@
       <workItem from="1537435738160" duration="6637000" />
       <workItem from="1537494480185" duration="17843000" />
       <workItem from="1537703452670" duration="4843000" />
-      <workItem from="1537760364644" duration="718000" />
+      <workItem from="1537760364644" duration="835000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1534152720612</created>
@@ -516,7 +516,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116712000" />
+    <option name="totallyTimeSpent" value="116829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1046,16 +1046,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/java/src/structure/node/DoubleNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+        <state relative-caret-position="366">
+          <caret line="94" column="43" lean-forward="false" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#583#584#0" expanded="true" />
             <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#2461#2462#0" expanded="true" />
-            <element signature="e#2488#2489#0" expanded="true" />
-            <element signature="e#2527#2528#0" expanded="true" />
-            <element signature="e#2559#2560#0" expanded="true" />
+            <element signature="e#2599#2600#0" expanded="true" />
+            <element signature="e#2626#2627#0" expanded="true" />
+            <element signature="e#2665#2666#0" expanded="true" />
+            <element signature="e#2697#2698#0" expanded="true" />
           </folding>
         </state>
       </provider>
