@@ -94,7 +94,7 @@ public class DoubleNode extends MyObject implements Serializable {
         int length;
         //防止执行addIndexDobleNode()后对temp产生影响
         temp = (DoubleNode) temp.clone();
-        if(index<1 || index>length()){
+        if(index<0 || index>length()){
             throw new MyException("链表越界异常");
         }
         while((length = header.length())!=0){
@@ -111,6 +111,28 @@ public class DoubleNode extends MyObject implements Serializable {
         }
     }
 
+    /**
+     * 删除指定位置的双向链表
+     * @param index
+     */
+    public void deleteDobleNode(int index){
+        DoubleNode header = this;
+        int count = header.length();
+        int length;
+        if(index<0 || index>length()){
+            throw new MyException("链表越界异常");
+        }
+        while((length=header.length())!=0){
+            if(index == count-length){
+                header.next = header.next.next;
+                header.next.next.prev = header.next;
+                return ;
+            }
+            header = header.next;
+        }
+
+    }
+
     public String getData(){
         return data;
     }
@@ -125,6 +147,7 @@ public class DoubleNode extends MyObject implements Serializable {
         bNode.addDobleNode(aNode);
         aNode.addDobleNode(bNode);
         aNode.addIndexDobleNode(bNode, 1);
+        aNode.deleteDobleNode(1);
         System.out.println(aNode.length());
     }
 
