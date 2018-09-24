@@ -81,6 +81,11 @@ public class DoubleNode extends MyObject implements Serializable {
         }
     }
 
+    /**
+     * 在双向链表指定的位子插入另一个双向链表
+     * @param temp
+     * @param index
+     */
     public void addIndexDobleNode(DoubleNode temp,int index){
         DoubleNode header = this;
         int count = header.length();
