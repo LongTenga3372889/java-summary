@@ -99,9 +99,7 @@ public class DoubleNode extends MyObject implements Serializable {
         }
         while((length = header.length())!=0){
             if(index == count - length){
-                /**
-                 * 防止抛出空指针异常
-                 */
+                // 防止抛出空指针异常
                 if(header.next!=null) {
                     temp.addDobleNode(header.next);
                 }
