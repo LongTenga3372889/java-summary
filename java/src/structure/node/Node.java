@@ -16,7 +16,7 @@ public class Node  extends MyObject implements Serializable {
     /**
      * 链表数据
      */
-    private String data;
+    private Object data;
 
     /**
      * 下一个节点
@@ -33,7 +33,7 @@ public class Node  extends MyObject implements Serializable {
      *
      * @param data
      */
-    public Node(String data) {
+    public Node(Object data) {
         this.data = data;
         head = this;
     }
@@ -112,12 +112,28 @@ public class Node  extends MyObject implements Serializable {
         return length;
     }
 
-    public String getData(){
+    public Object getData(){
         return data;
     }
 
-    public void setData(String date){
+    public void setData(Object date){
         this.data = date;
+    }
+
+    public Node getNext() {
+        return next;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
+    }
+
+    public Node getHead() {
+        return head;
+    }
+
+    public void setHead(Node head) {
+        this.head = head;
     }
 
     public static void main(String[] args) {
