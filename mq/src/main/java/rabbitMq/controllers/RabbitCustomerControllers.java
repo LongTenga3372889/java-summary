@@ -46,8 +46,6 @@ public class RabbitCustomerControllers {
                     }
                 }
             };
-            //如需要指定管道则需要讲queue改成确定的topic
-            channel.basicConsume("LT", true, consumer);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (TimeoutException e) {
