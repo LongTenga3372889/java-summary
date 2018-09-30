@@ -12,13 +12,18 @@ public class ReferenceCountingGC {
     private static final int MB=1024*1024;
     private byte[]bigSize=new byte[5*MB];
     public void testGC(){
-        ReferenceCountingGC objA=new ReferenceCountingGC();  // objACount+1
-        ReferenceCountingGC objB=new ReferenceCountingGC();  // objBCount+1
-        objA.instance=objB; // objACount+1
-        objB.instance=objA; // objBCount+1
-        //假设在这行发生GC,objA和objB是否能被回收？
-        objB=null; //objBCount-1=1
-        objA=null; //objACount-1=1
+        // objACount+1
+        ReferenceCountingGC objA=new ReferenceCountingGC();
+        // objBCount+1
+        ReferenceCountingGC objB=new ReferenceCountingGC();
+        // objACount+1
+        objA.instance=objB;
+        // objBCount+1
+        objB.instance=objA;
+        //假设在这行发生GC,objA和objB是否能被回收?
+        objB=null;
+        //objACount-1=1
+        objA=null;
         System.gc();
     }
 

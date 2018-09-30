@@ -1,8 +1,5 @@
 package structure.tree;
 
-import structure.node.DoubleNode;
-import structure.node.Node;
-
 /**
  * @author teng.long@hand-china.com
  * @Name Tree  二叉树
