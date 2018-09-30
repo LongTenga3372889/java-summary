@@ -24,4 +24,4 @@ Java 知识点，继续完善中。
 - [GC与内存分配](MD/jvm/JVMGC.md)
 
 ## 消息队列
-- [RabbitMQ]()
+- [RabbitMQ](MD/mq/RabbitMQ.md)
