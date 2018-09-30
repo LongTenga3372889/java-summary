@@ -24,7 +24,7 @@ public class RabbitCustomerControllers {
             channel.exchangeDeclare("log", BuiltinExchangeType.FANOUT);
             String queue = channel.queueDeclare().getQueue();
             channel.queueBind(queue, "log", "LT");
-            //s:主题 b:是否事物消费
+            //queue:主题 autoAck:是否事物消费
             channel.basicConsume("LT", false,"myConsumerTag",new DefaultConsumer(channel){
                 @Override
                 public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
@@ -36,7 +36,6 @@ public class RabbitCustomerControllers {
                         String s = new String(body);
                         System.out.println(s);
                         int p = 0;
-                        int count = 5/p;
                         System.out.println(s);
                         //提交事物
                         channel.txCommit();

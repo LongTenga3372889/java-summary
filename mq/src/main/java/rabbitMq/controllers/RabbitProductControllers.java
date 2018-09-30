@@ -15,7 +15,7 @@ public class RabbitProductControllers {
 
     public void rabbitTest(){
         try {
-            RabbitmqUtil.basicPublish("LT", "aaa");
+            RabbitmqUtil.basicPublish("log","LT","aaa");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (TimeoutException e) {
