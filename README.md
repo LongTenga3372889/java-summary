@@ -22,3 +22,6 @@ Java 知识点，继续完善中。
 - [JVM内存划分](MD/jvm/JVMMemory.md)
 - [OutOfMemoryError异常分析](MD/jvm/OutOfMemoryError.md)
 - [GC与内存分配](MD/jvm/JVMGC.md)
+
+## 消息队列
+- [RabbitMQ]()

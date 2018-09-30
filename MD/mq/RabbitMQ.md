@@ -1,0 +1,2 @@
+- [生产者代码](../../mq/src/rabbitMq/controllers/RabbitProductControllers.java)
+- [消费者代码](../../mq/src/rabbitMq/controllers/RabbitCustomerControllers.java)
