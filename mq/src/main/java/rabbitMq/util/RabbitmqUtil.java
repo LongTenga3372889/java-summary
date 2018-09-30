@@ -39,7 +39,7 @@ public class RabbitmqUtil {
     public static void basicPublish(String exchange,String topic,String message) throws IOException, TimeoutException {
         Channel channel = GetConnectionFactory.getChannel();
         channel.exchangeDeclare(exchange, BuiltinExchangeType.FANOUT);
-        channel.basicPublish(exchange, "", null, message.getBytes("UTF-8"));
+        channel.basicPublish(exchange, topic, null, message.getBytes("UTF-8"));
     }
 
     /**

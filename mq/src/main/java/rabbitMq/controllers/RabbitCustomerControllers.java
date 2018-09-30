@@ -19,42 +19,38 @@ public class RabbitCustomerControllers {
     /**
      * 此模式支持广播
      */
-    public void rabbitTest(){
-        try {
-            Channel channel = GetConnectionFactory.getChannel();
+    public void rabbitTest() throws IOException, TimeoutException {
+            final Channel channel = GetConnectionFactory.getChannel();
             channel.exchangeDeclare("log", BuiltinExchangeType.FANOUT);
             String queue = channel.queueDeclare().getQueue();
             channel.queueBind(queue, "log", "LT");
-            consumer = new DefaultConsumer(channel){
+            //s:主题 b:是否事物消费
+            channel.basicConsume("LT", false,"myConsumerTag",new DefaultConsumer(channel){
                 @Override
-                public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException
-                {
-                    //开启事物消费
-                    channel.basicConsume("LT", false, consumer);
+                public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                     try {
-                        String message = new String(body, "UTF-8");
-                        System.out.println("consumerTag=" + consumerTag + ",envelope=" + envelope);
-                        System.out.println(message);
-                        int s = 0;
-                        int a = 1/s;
+                        //开启事物消费
+                        channel.txSelect();
+                        long deliveryTag = envelope.getDeliveryTag();
+                        channel.basicAck(deliveryTag,false);
+                        String s = new String(body);
+                        System.out.println(s);
+                        int p = 0;
+                        int count = 5/p;
+                        System.out.println(s);
                         //提交事物
-                        channel.basicNack(envelope.getDeliveryTag(), false,false);
+                        channel.txCommit();
                     }catch (Exception e){
-                        e.printStackTrace();
                         //回滚事物
-                        channel.basicNack(envelope.getDeliveryTag(), false, true);
+                        channel.txRollback();
                     }
+
                 }
-            };
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TimeoutException e) {
-            e.printStackTrace();
-        }
+            });
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, TimeoutException {
         RabbitCustomerControllers rabbitCustomerControllers = new RabbitCustomerControllers();
         rabbitCustomerControllers.rabbitTest();
     }
