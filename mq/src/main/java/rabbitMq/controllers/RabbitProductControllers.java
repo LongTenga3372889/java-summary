@@ -14,6 +14,9 @@ import java.util.concurrent.TimeoutException;
  */
 public class RabbitProductControllers {
 
+    /**
+     * 普通的生产模式
+     */
     public void rabbitTest(){
         try {
             RabbitmqUtil.basicPublish("log","LT","aaa");
@@ -25,6 +28,10 @@ public class RabbitProductControllers {
 
     }
 
+    /**
+     * 带Confirm的生产模式
+     * 此模式会大大降低效率但是可以保证消息的到达
+     */
     public void rabbitConfirm(){
         try {
             RabbitmqUtil.basicPublisgConfirmLike("log","LongTeng","aaa");

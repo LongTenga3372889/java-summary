@@ -29,7 +29,7 @@ public class RabbitCustomerControllers {
                 @Override
                 public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                     try {
-                        //开启事物消费
+                        //开启事物消费  此方式会大大的降低消费者的效率，但是此模式会保证消息不会因为后续异常而丢失
                         channel.txSelect();
                         long deliveryTag = envelope.getDeliveryTag();
                         channel.basicAck(deliveryTag,false);

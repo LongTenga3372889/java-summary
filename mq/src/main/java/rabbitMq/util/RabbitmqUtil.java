@@ -58,6 +58,14 @@ public class RabbitmqUtil {
         channel.basicPublish(exchange, topic, null, message.getBytes("UTF-8"));
     }
 
+    /**
+     * 消息的Confirm发送
+     * @param exchange 申明交易所
+     * @param topic    申明消息的管道
+     * @param message  消息
+     * @throws IOException
+     * @throws TimeoutException
+     */
     public static void basicPublisgConfirmLike(String exchange,String topic,String message) throws IOException, TimeoutException {
         Channel channel = GetConnectionFactory.getChannel();
         channel.exchangeDeclare(exchange, BuiltinExchangeType.FANOUT);
