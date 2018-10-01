@@ -41,5 +41,23 @@
 
 （7）消费者客户端从对应的队列中获取并处理消息。
 
+# RabbitMQ的优缺点
+`优点`：
+
+（1）由Erlang语言开发，支持大量协议：AMQP、XMPP、SMTP、STOMP。
+
+（2）支持消息的持久化、负载均衡和集群，且集群易扩展。
+
+（3）具有一个Web监控界面，易于管理。
+
+（4）安装部署简单，上手容易，功能丰富，强大的社区支持。
+
+（5）支持消息确认机制、灵活的消息分发机制。
+`缺点`：
+
+（1）由于牺牲了部分性能来换取稳定性，比如消息的持久化功能，使得RabbitMQ在大吞吐量性能方面不及Kafka和ZeroMQ。
+
+（2）由于支持多种协议，使RabbitMQ非常重量级，比较适合企业级开发。 
+
 - [生产者代码](../../mq/src/rabbitMq/controllers/RabbitProductControllers.java)
 - [消费者代码](../../mq/src/rabbitMq/controllers/RabbitCustomerControllers.java)
