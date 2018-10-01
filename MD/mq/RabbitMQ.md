@@ -168,3 +168,9 @@ public class Customer {
 
 - [生产者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitProductControllers.java)
 - [消费者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitCustomerControllers.java)
+
+``代码中需要注意的地方``
+
+- exchange参数：当为``topic``时为消息的广播。
+当为``direct``时channel绑定的routingkey和发送时的routingkey一样时才可以发送
+当为``fanout``时

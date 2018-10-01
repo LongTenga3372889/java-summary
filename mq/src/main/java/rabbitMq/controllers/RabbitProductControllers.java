@@ -1,5 +1,6 @@
 package rabbitMq.controllers;
 
+import error.exception.MyException;
 import rabbitMq.util.RabbitmqUtil;
 
 import java.io.IOException;
@@ -24,9 +25,21 @@ public class RabbitProductControllers {
 
     }
 
+    public void rabbitConfirm(){
+        try {
+            RabbitmqUtil.basicPublisgConfirmLike("log","LongTeng","aaa");
+        } catch (MyException e){
+            System.out.println("发送异常");
+        }catch (IOException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         RabbitProductControllers productControllers = new RabbitProductControllers();
-        productControllers.rabbitTest();
+        productControllers.rabbitConfirm();
     }
 
 }
