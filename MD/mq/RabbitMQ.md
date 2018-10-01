@@ -123,5 +123,10 @@ public class Producer{
 第四个参数为当所有消费者客户端连接断开时是否自动删除队列、
 第五个参数为队列的其他参数`
 
+`注2：basicPublish第一个参数为交换机名称、
+第二个参数为队列映射的路由key、
+第三个参数为消息的其他属性、
+第四个参数为发送信息的主体`
+
 - [生产者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitProductControllers.java)
 - [消费者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitCustomerControllers.java)
