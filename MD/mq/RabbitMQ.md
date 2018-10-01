@@ -171,6 +171,9 @@ public class Customer {
 
 ``代码中需要注意的地方``
 
-- exchange参数：当为``topic``时为消息的广播。
+- exchange参数：
+当为``topic``时为消息的广播。
+
 当为``direct``时channel绑定的routingkey和发送时的routingkey一样时才可以发送
-当为``fanout``时
+
+当为``fanout``时channel只与exchange有关与routingkey无关

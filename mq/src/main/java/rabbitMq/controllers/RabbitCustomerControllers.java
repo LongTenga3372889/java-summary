@@ -23,9 +23,9 @@ public class RabbitCustomerControllers {
             final Channel channel = GetConnectionFactory.getChannel();
             channel.exchangeDeclare("log", BuiltinExchangeType.FANOUT);
             String queue = channel.queueDeclare().getQueue();
-            channel.queueBind(queue, "log", "LT");
+            channel.queueBind(queue, "log", "");
             //queue:主题 autoAck:是否事物消费
-            channel.basicConsume("LongTeng", false,"myConsumerTag",new DefaultConsumer(channel){
+            channel.basicConsume("", false,"myConsumerTag",new DefaultConsumer(channel){
                 @Override
                 public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                     try {

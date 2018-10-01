@@ -60,7 +60,7 @@ public class RabbitmqUtil {
 
     public static void basicPublisgConfirmLike(String exchange,String topic,String message) throws IOException, TimeoutException {
         Channel channel = GetConnectionFactory.getChannel();
-        channel.exchangeDeclare(topic, BuiltinExchangeType.DIRECT);
+        channel.exchangeDeclare(exchange, BuiltinExchangeType.FANOUT);
         channel.queueDeclare(topic, false, false, false, null);
         channel.confirmSelect();
         channel.basicPublish(exchange, topic, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes());
