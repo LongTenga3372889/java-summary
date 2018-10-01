@@ -23,5 +23,23 @@
 
 （9）Channel：消息通道，也称信道。在客户端的每个连接里可以建立多个Channel，每个Channel代表一个会话任务。
 
+# RabbitMQ的使用流程
+ AMQP模型中，消息在producer中产生，发送到MQ的exchange上，exchange根据配置的路由方式投递到相应的Queue上，
+ Queue又将消息发送给已经在此Queue上注册的consumer，消息从queue到consumer有push和pull两种方式。消息队列的使用过程大概如下：
+
+（1）客户端连接到消息队列服务器，打开一个channel。
+
+（2）客户端声明一个exchange，并设置相关属性。
+
+（3）客户端声明一个queue，并设置相关属性。
+
+（4）客户端使用routing key，在exchange和queue之间建立好Binding关系。
+
+（5）生产者客户端投递消息到exchange。
+
+（6）exchange接收到消息后，就根据消息的RoutingKey和已经设置的binding，进行消息路由（投递），将消息投递到一个或多个队列里。
+
+（7）消费者客户端从对应的队列中获取并处理消息。
+
 - [生产者代码](../../mq/src/rabbitMq/controllers/RabbitProductControllers.java)
 - [消费者代码](../../mq/src/rabbitMq/controllers/RabbitCustomerControllers.java)
