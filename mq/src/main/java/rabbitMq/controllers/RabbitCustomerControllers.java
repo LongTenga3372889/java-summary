@@ -35,8 +35,6 @@ public class RabbitCustomerControllers {
                         channel.basicAck(deliveryTag,false);
                         String s = new String(body);
                         System.out.println(s);
-                        int p = 0;
-                        System.out.println(s);
                         //提交事物
                         channel.txCommit();
                     }catch (Exception e){

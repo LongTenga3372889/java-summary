@@ -60,5 +60,5 @@
 
 （2）由于支持多种协议，使RabbitMQ非常重量级，比较适合企业级开发。 
 
-- [生产者代码](../../mq/src/rabbitMq/controllers/RabbitProductControllers.java)
-- [消费者代码](../../mq/src/rabbitMq/controllers/RabbitCustomerControllers.java)
+- [生产者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitProductControllers.java)
+- [消费者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitCustomerControllers.java)
