@@ -60,5 +60,19 @@
 
 （2）由于支持多种协议，使RabbitMQ非常重量级，比较适合企业级开发。 
 
+# RabbitMQ代码
+首先需要引入maven包
+```xml
+      <dependency>
+          <groupId>com.rabbitmq</groupId>
+          <artifactId>amqp-client</artifactId>
+          <version>3.5.1</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.amqp</groupId>
+          <artifactId>spring-rabbit</artifactId>
+          <version>1.4.5.RELEASE</version>
+      </dependency>
+```
 - [生产者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitProductControllers.java)
 - [消费者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitCustomerControllers.java)
