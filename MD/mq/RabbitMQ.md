@@ -162,7 +162,7 @@ public class Customer {
 }
 ```
 
-这就是一个简单的rabbitmq消息的生产和消费例子。
+这就是一个简单的rabbitmq消息的生产和消费例子。但是在实际运用中会有许多这样那样的问题(如消息的确认机制，消息的广播等等)，以下是我总结的一些方法望大家多多点评。
 
 - [生产者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitProductControllers.java)
 - [消费者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitCustomerControllers.java)
