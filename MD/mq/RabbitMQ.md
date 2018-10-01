@@ -95,8 +95,8 @@ public class Producer{
          //创建连接工厂
          ConnectionFactory factory = new ConnectionFactory();
          //设置mq服务器的信息
-         factory.setHost("localhost");
-         factory.setUsername("ip");
+         factory.setHost("ip");
+         factory.setUsername("username");
          factory.setPassword("password");
          factory.setPort(2188);
          //创建一个新的连接
@@ -127,6 +127,42 @@ public class Producer{
 第二个参数为队列映射的路由key、
 第三个参数为消息的其他属性、
 第四个参数为发送信息的主体`
+
+创建一个消费者
+```java
+public class Customer {
+    private final static String QUEUE_NAME = "TEST";
+
+    public static void main(String[] args) throws IOException, TimeoutException {
+        // 创建连接工厂
+        ConnectionFactory factory = new ConnectionFactory();
+        //设置RabbitMQ地址
+        factory.setHost("ip");
+        //创建一个新的连接
+        Connection connection = factory.newConnection();
+        //创建一个通道
+        Channel channel = connection.createChannel();
+        //声明要关注的队列
+        channel.queueDeclare(QUEUE_NAME, false, false, true, null);
+        System.out.println("Customer Waiting Received messages");
+        //DefaultConsumer类实现了Consumer接口，通过传入一个频道，
+        // 告诉服务器我们需要那个频道的消息，如果频道中有消息，就会执行回调函数handleDelivery
+        Consumer consumer = new DefaultConsumer(channel) {
+            @Override
+            public void handleDelivery(String consumerTag, Envelope envelope,
+                                       AMQP.BasicProperties properties, byte[] body)
+                    throws IOException {
+                String message = new String(body, "UTF-8");
+                System.out.println("Customer Received '" + message + "'");
+            }
+        };
+        //自动回复队列应答 
+        channel.basicConsume(QUEUE_NAME, true, consumer);
+    }
+}
+```
+
+这就是一个简单的rabbitmq消息的生产和消费例子。
 
 - [生产者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitProductControllers.java)
 - [消费者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitCustomerControllers.java)
