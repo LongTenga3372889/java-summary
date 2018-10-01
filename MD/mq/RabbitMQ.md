@@ -73,6 +73,16 @@
           <artifactId>spring-rabbit</artifactId>
           <version>1.4.5.RELEASE</version>
       </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>1.7.22</version>
+      </dependency>
+          <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-nop</artifactId>
+          <version>1.7.2</version>
+      </dependency>
 ```
 - [生产者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitProductControllers.java)
 - [消费者代码](../../mq/src/main/java/rabbitMq/controllers/RabbitCustomerControllers.java)
