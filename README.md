@@ -13,6 +13,10 @@ Java 知识点，继续完善中。
 
 ## 数据结构与算法
 
+### Collections
+
+- [ArrayList](MD/Collections/ArrayList.md)
+
 ### 链表
 
 - [单链表](java/src/structure/node/Node.java)
