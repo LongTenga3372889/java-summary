@@ -1,4 +1,5 @@
-### ArrayList
+## ArrayList
+### 常用方法
 - boolean add(E e)
 将指定的元素添加到此列表的尾部。
 
@@ -58,3 +59,17 @@
 
 - void trimToSize()
 将此 ArrayList 实例的容量调整为列表的当前大小。
+
+### 迭代
+
+```java
+    ArrayList<Integer> intList = new ArrayList<>();
+    intList.add(123);
+    intList.add(456);
+    intList.add(789);
+    for(Integer a:intList){
+        System.out.println(a);
+    }
+```
+
+使用foreach写法看起来更简洁，而且他适用于各种容器，更为通用。
