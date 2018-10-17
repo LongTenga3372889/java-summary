@@ -73,3 +73,13 @@
 ```
 
 使用foreach写法看起来更简洁，而且他适用于各种容器，更为通用。
+
+这里要注意，当在迭代的过程中对容器结构发生变化会导致`java.util.ConcurrentModificationException`。这是因为ArrayList中的iterator实现的代码，他会对是否修改容器进行判断。
+假如想要在迭代的时候修改必须要使用`Iterator.remove()`。
+
+### ArrayList特点
+
+- 可以随机访问任何一个位子，按照索引位置进行访问效率很高。O(1)
+- 除非ArrayList已经排序否则按照内容查找元素效率低。O(N)
+- 增加元素快。O(1)
+- 插入和删除效率比较慢。O(N)
