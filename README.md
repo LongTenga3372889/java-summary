@@ -16,6 +16,7 @@ Java 知识点，继续完善中。
 ### Collections
 
 - [ArrayList](MD/Collections/ArrayList.md)
+- [LinkedList]()
 
 ### 链表
 
