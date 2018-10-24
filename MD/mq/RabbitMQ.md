@@ -67,7 +67,7 @@
       <dependency>
           <groupId>com.rabbitmq</groupId>
           <artifactId>amqp-client</artifactId>
-          <version>3.5.1</version>
+          <version>5.0.0</version>
       </dependency>
       <dependency>
           <groupId>org.springframework.amqp</groupId>
