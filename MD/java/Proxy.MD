@@ -8,8 +8,40 @@
 (1)定义接口
 
 ```java
-public interface IBook(){
-    void getBookName();
+public interface IBookService{
+    void getBookName(String s);
 }
 ```
 
+(2)创建实例对象
+```java
+public class BookService implements IBookService{
+    @Override
+    public void getBookName(String s){
+        System.out.println("我叫:"+s);
+    }
+}
+```
+
+(3)创建代理对象
+```java
+public class Proxy implements IBookService{
+    private IBookService iBookService;
+    
+    public Proxy(String iBookService){
+        this.iBookService = iBookService;
+    }
+    
+    public void getBookName(String s){
+        iBookService.getBookName(s);
+    }
+}
+```
+
+(4)运行代码
+```java
+public static void main(String[] args){
+  Proxy proxy = new Proxy(new BookService());
+  proxy.getBookName("JAVA编程的逻辑");
+}
+```
