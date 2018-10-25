@@ -7,6 +7,10 @@ Java 知识点，继续完善中。
 ## JAVA JDK
 - [JDK1.8新特性](java/src/jdk18/Stream.java)
 
+## 设计模式
+
+- [静态代理Proxy](MD/java/Proxy.MD)
+
 ## JAVA工具类
 
 - [发送邮件](Util/src/util/SendMailUtil.java)
