@@ -9,7 +9,9 @@ Java 知识点，继续完善中。
 
 ## 设计模式
 
-- [静态代理Proxy](MD/java/Proxy.MD)
+- [反射特殊章节](MD/java/reflex.MD)
+- [静态代理Proxy](MD/java/StaticProxy.MD)
+- [动态代理Proxy](MD/java/DynamicProxy.MD)
 
 ## JAVA工具类
 
