@@ -32,6 +32,8 @@ public class Stream {
             user
      );
 
+    private User[] users = {new User("zhangsan", 11),user};
+
     /**
      * 利用流来进行遍历
      */
@@ -90,9 +92,13 @@ public class Stream {
         list.stream().map(user -> user.getName().toUpperCase()).forEach(User -> System.out.println(user.getName()));
     }
 
+    public void suzhu(){
+        Arrays.stream(users).forEach(user-> System.out.println(user.getName()));
+    }
+
     public static void main(String[] args) {
         Stream stream = new Stream();
-        stream.map();
+        stream.suzhu();
     }
 
 }
