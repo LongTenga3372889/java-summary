@@ -113,3 +113,24 @@ public class Test3{
     }
 }
 ```
+
+## 通过反射获取方法并执行
+```java
+public class Test4{
+    public static void main(String[] args){
+      Class clazz = java.util.Date.class;
+      //获取所有公有方法
+      Method[] methods = clazz.getMethods();
+      java.util.Arrays.stream(methods).forEach(System.out::println);
+      //获取所有公有，私有，受保护的方法
+      Method[] methods1 = clazz.getDeclaredMethods();
+      java.util.Arrays.stream(methods1).forEach(System.out::println);
+      //调用
+      Method method = clazz.getDeclaredMethod("setDate",int.class);
+      method.setAccessible(true);
+      Object o = clazz.getConstructor(null).newInstance();
+      method.invoke(o,15);
+      System.out.println(o);
+    }
+}
+```

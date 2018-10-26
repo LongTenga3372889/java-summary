@@ -1,5 +1,6 @@
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Date;
 
 /**
@@ -9,22 +10,19 @@ import java.util.Date;
  * @Date 2018/10/25
  */
 public class Test {
-    public static void main(String[] args) throws NoSuchFieldException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
         Class clazz = java.util.Date.class;
-        //获取所有的公有字段
-        Field[] fields = clazz.getFields();
-        java.util.Arrays.stream(fields).forEach(field->System.out.println(field));
-
-        //获取所有公有私有受保护的字段
-        Field[] fields1 = clazz.getDeclaredFields();
-        java.util.Arrays.stream(fields1).forEach(field->System.out.println(field));
-
-        //获取单个字段并调用
-        Field field = clazz.getDeclaredField("fastTime");
-        Object obj = clazz.getConstructor(null).newInstance();
-        field.setAccessible(true);
-        field.set(obj,10000);
-        java.util.Date date = (Date) obj;
-        System.out.println(date);
+        //获取所有公有方法
+        Method[] methods = clazz.getMethods();
+        java.util.Arrays.stream(methods).forEach(System.out::println);
+        //获取所有公有，私有，受保护的方法
+        Method[] methods1 = clazz.getDeclaredMethods();
+        java.util.Arrays.stream(methods1).forEach(System.out::println);
+        //调用
+        Method method = clazz.getDeclaredMethod("setDate",int.class);
+        method.setAccessible(true);
+        Object o = clazz.getConstructor(null).newInstance();
+        method.invoke(o,15);
+        System.out.println(o);
     }
 }
