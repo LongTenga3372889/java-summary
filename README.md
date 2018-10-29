@@ -11,7 +11,7 @@ Java 知识点，继续完善中。
 
 - [反射特殊章节](MD/java/reflex.MD)
 - [简单工厂模式](MD/java/SimpleFactory.MD)
-- [抽象产品模式](MD/java/FactoryMethod.MD)
+- [工厂方法模式](MD/java/FactoryMethod.MD)
 - [静态代理Proxy](MD/java/StaticProxy.MD)
 - [动态代理Proxy](MD/java/DynamicProxy.MD)
 
