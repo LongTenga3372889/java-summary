@@ -15,8 +15,8 @@
 
 ## 虚拟机栈溢出与本地方法栈溢出
 
-   - 如果线程请求的最大深度大于虚拟机锁允许的最大深度，深度受Xss参数和计算机影响，同一个计算机同样的Xss不同时间执行的深度也有可能不一样。将抛出StackOverflowError。[示例代码](../../jvm/src/jvm/VMStackError.java)
-   - 如果虚拟机在扩展时无法或得到足够的内存会抛出OutOfMemoryError。`执行前先保存当前东西,此程序可能导致电脑卡死`[示例代码](../../jvm/src/jvm/VirtualMemory.java)
+   - 如果线程请求的最大深度大于虚拟机锁允许的最大深度，深度受Xss参数和计算机影响，同一个计算机同样的Xss不同时间执行的深度也有可能不一样。将抛出StackOverflowError。[示例代码](../../java/src/jvm/VMStackError.java)
+   - 如果虚拟机在扩展时无法或得到足够的内存会抛出OutOfMemoryError。`执行前先保存当前东西,此程序可能导致电脑卡死`[示例代码](../../java/src/jvm/VirtualMemory.java)
    - 这两种错误有一些相互作用的地方，当栈空间无法分配时，是内存太小还是栈空间太大导致的。其实都是内存问题。
    
 ## 方法区和运行时常亮池溢出
