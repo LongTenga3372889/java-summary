@@ -14,7 +14,7 @@ public class Test {
         Class clazz = java.util.Date.class;
         //获取所有公有方法
         Method[] methods = clazz.getMethods();
-        java.util.Arrays.stream(methods).forEach(System.out::println);
+//        java.util.Arrays.stream(methods).forEach(System.out::println);
         //获取所有公有，私有，受保护的方法
         Method[] methods1 = clazz.getDeclaredMethods();
         java.util.Arrays.stream(methods1).forEach(System.out::println);

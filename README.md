@@ -15,6 +15,7 @@ Java 知识点，继续完善中。
 - [抽象工厂模式](MD/java/AbstractFactory.MD)
 - [静态代理Proxy](MD/java/StaticProxy.MD)
 - [动态代理Proxy](MD/java/DynamicProxy.MD)
+- [建造者模式](MD/java/Builder.MD)
 
 ## JAVA工具类
 
