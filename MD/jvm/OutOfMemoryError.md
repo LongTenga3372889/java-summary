@@ -6,7 +6,7 @@
    - 以下代码是在Eclipse IDE上执行需要设置run/debug的jvm参数和MAT解析。
    - 这里需要先设置以下jvm参数防止电脑CPU爆满导致电脑卡死。
    ![](../../phone/j.png)
-   [点我查看代码](../../jvm/src/jvm/HeapOOM.java)
+   [点我查看代码](../../java/src/jvm/HeapOOM.java)
    
     运行结果
    ![](../../phone/c.jpg)
